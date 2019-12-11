@@ -1,0 +1,44 @@
+version: '3'
+services:
+  ganache:
+    build: ganache
+    image: ganache
+    container_name: ganache-cli
+    tty: true
+    volumes:
+      - ./ganache/src:/usr/src/app
+      - ./ganache/db:/var/ganache
+    ports: 
+      - "8545:8545"
+  truffe:
+    build: truffle
+    image: truffle
+    container_name: truffle
+    tty: true
+    volumes:
+      - ./truffle/src:/usr/app/src
+    ports: 
+      - "3000:3000"
+  frontend:
+    build: frontend
+    image: react-frontend
+    container_name: reactfrontend
+    tty: true
+    volumes: 
+      - ./frontend/src:/usr/app/src
+    ports: 
+      - "3333:3000"
+      - "9090:8080"
+  nodebackend:
+    build: nodeserver
+    image: nodeserver
+    container_name: nodebackend
+    tty: true
+    volumes:
+      - ./nodeserver/src:/usr/app/src
+    ports:
+      - "8082:3000"
+networks:
+  default:
+    external:
+      name: dapp_dev_01
