@@ -9,4 +9,5 @@ if [ ! -d $DIR ];then
     echo -e "\n===> installing material-ui & web3.js\n"
     npm install web3@1.2.4 websocket@1.0.30 @material-ui/core @material-ui/icons
 fi
+cd /usr/app/src/dapp
 npm start
