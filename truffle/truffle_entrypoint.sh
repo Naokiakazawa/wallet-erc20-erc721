@@ -6,3 +6,4 @@ if [ ! -d $DIR ];then
     echo -e "\n===> creating a bare Truffle project\n"
     truffle init
 fi
+/bin/bash
