@@ -5,5 +5,6 @@ if [ ! -d $DIR ];then
     cd /usr/app/src
     echo -e "\n===> creating a bare Truffle project\n"
     truffle init
+else
+    /bin/bash
 fi
-/bin/bash
