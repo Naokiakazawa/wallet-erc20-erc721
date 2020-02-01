@@ -22,7 +22,7 @@ services:
   frontend:
     build: frontend
     image: react-frontend
-    container_name: reactfrontend
+    container_name: react
     tty: true
     volumes: 
       - ./frontend/src:/usr/app/src
@@ -37,7 +37,7 @@ services:
     volumes:
       - ./nodeserver/src:/usr/app/src
     ports:
-      - "8082:3000"
+      - "5555:5555"
 networks:
   default:
     external:
