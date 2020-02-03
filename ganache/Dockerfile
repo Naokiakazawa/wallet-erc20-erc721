@@ -1,8 +1,8 @@
 FROM node:8.15.0
 LABEL maintainer='Naoki Akazawa'
 ENV TZ=Asia/Tokyo
-RUN npm install -g --unsafe-perm ganache-cli@6.7.0
-RUN mkdir -p /var/ganache
+RUN npm install -g --unsafe-perm ganache-cli@6.7.0 && \
+    mkdir -p /var/ganache
 ENV DOCKER true
 ENV DATADIR /var/ganache
 WORKDIR /usr/src/app
