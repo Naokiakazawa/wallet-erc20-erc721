@@ -2,7 +2,7 @@ version: '3'
 services:
   ganache:
     build: ganache
-    image: ganache
+    image: ganache:wallet
     container_name: ganache-cli
     tty: true
     volumes:
